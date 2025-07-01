@@ -1,0 +1,266 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 24 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 20% 12%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 12%;
+    --input: 220 20% 12%;
+    --ring: 24 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 24 100% 50%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 20% 12%;
+    --sidebar-ring: 24 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Prevent layout shifts */
+    overflow-x: hidden;
+  }
+
+  /* Improve text rendering */
+  h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Optimize image loading */
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Preload critical fonts */
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent;
+  }
+  
+  .hero-glow {
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/10;
+    /* Use transform3d for better performance */
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+  
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, rgba(249, 115, 22, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+    /* Hardware acceleration */
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+  
+  /* Enhanced button styles with performance optimizations */
+  .btn-primary {
+    @apply bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+
+  /* Enhanced animations with better performance */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Performance optimized scroll animations */
+  .scroll-animate {
+    animation: slideInFromBottom 0.8s ease-out;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Optimized intersection observer animations */
+  .fade-in-view {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-view.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Critical loading states */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700;
+  }
+
+  .blur-load {
+    filter: blur(5px);
+    transition: filter 0.3s;
+  }
+
+  .blur-load.loaded {
+    filter: blur(0);
+  }
+}
+
+/* Optimized keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.8), 0 0 40px rgba(249, 115, 22, 0.3);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Advanced mobile optimizations */
+@media (max-width: 768px) {
+  .hero-mobile-optimized {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .text-responsive {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+  }
+  
+  .button-mobile {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    /* Optimize for touch */
+    min-height: 44px;
+  }
+
+  /* Reduce animations on mobile for better performance */
+  .card-hover {
+    @apply hover:scale-100;
+  }
+
+  /* Optimize scrolling on mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Performance improvements for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Critical CSS optimizations */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Preload important images */
+.preload-hero::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  background-image: url('/lovable-uploads/33d84383-c883-447a-96cd-9786baf14114.png');
+}
