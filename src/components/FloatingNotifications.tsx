@@ -92,19 +92,17 @@ const FloatingNotifications = () => {
       {notifications.map((notification) => (
         <div
           key={notification.id}
-          className="relative bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl border border-brand-blue/30 rounded-2xl shadow-2xl p-4 max-w-[320px] animate-fade-in overflow-hidden group hover:scale-105 transition-all duration-300"
+          className="relative bg-white border border-gray-200 rounded-2xl shadow-lg p-4 max-w-[320px] animate-fade-in overflow-hidden group hover:scale-105 transition-all duration-300"
         >
-          {/* Background gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-brand-purple/5 rounded-2xl"></div>
           {/* Selo animado */}
           <div className="absolute top-2 right-2 flex items-center gap-1">
-            <CheckCircle className="w-5 h-5 text-brand-green animate-pulse-slow" />
-            <span className="text-xs font-bold text-brand-green animate-pulse-slow">Novo Cliente</span>
+            <CheckCircle className="w-5 h-5 text-green-500" />
+            <span className="text-xs font-bold text-green-500">Novo Cliente</span>
           </div>
           <div className="relative z-10 flex items-start gap-3">
             {/* Avatar com iniciais e gradiente */}
-            <div className={`flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-gradient-to-br ${getAvatarGradient(notification.name)} flex items-center justify-center shadow-lg`}>
-              <span className="text-white font-bold text-lg select-none">
+            <div className="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center shadow">
+              <span className="text-blue-700 font-bold text-lg select-none">
                 {notification.name.split(' ').map(n => n[0]).join('')}
               </span>
             </div>
@@ -116,39 +114,38 @@ const FloatingNotifications = () => {
               </div>
               <div className="mb-2">
                 <p className="text-xs text-gray-600 font-medium mb-1 flex items-center gap-1">
-                  <Zap className="w-3 h-3 text-brand-blue" /> Acabou de assinar
+                  <Zap className="w-3 h-3 text-blue-500" /> Acabou de assinar
                 </p>
-                <div className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange text-white px-3 py-1 rounded-full text-xs font-bold shadow-md animate-pulse-slow">
+                <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold shadow-sm">
                   {notification.plan}
                 </div>
               </div>
               <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
                 <div className="flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-brand-blue" />
+                  <MapPin className="w-3 h-3 text-blue-400" />
                   <span className="font-medium text-xs">{notification.city}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-brand-blue" />
+                  <Clock className="w-3 h-3 text-blue-400" />
                   <span className="font-medium text-xs">{notification.timeAgo}</span>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-brand-green/10 to-brand-blue/10 rounded-lg p-2 border border-brand-green/30">
+              <div className="bg-gray-50 rounded-lg p-2 border border-green-100">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-brand-green font-medium">Valor:</span>
-                  <span className="text-lg font-bold text-brand-green animate-pulse">{notification.planValue}</span>
+                  <span className="text-xs text-gray-600 font-medium">Valor:</span>
+                  <span className="text-lg font-bold text-green-500">{notification.planValue}</span>
                 </div>
               </div>
               {/* Botão de ação */}
               <button
                 onClick={() => window.open('https://wa.me/5511972121789?text=Quero%20assinar%20o%20MULT%20SERVER!', '_blank')}
-                className="mt-3 w-full bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange text-white text-xs font-bold py-2 rounded-lg shadow-md hover:scale-105 transition-all duration-300 animate-glow"
+                className="mt-3 w-full bg-green-500 text-white text-xs font-bold py-2 rounded-lg shadow hover:bg-green-600 transition-all duration-200 flex items-center justify-center gap-2"
               >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 17.52c-1.2 1.2-2.8 2.08-4.52 2.36-2.36.36-4.8-.36-6.64-2.2-1.84-1.84-2.56-4.28-2.2-6.64.28-1.72 1.16-3.32 2.36-4.52a8.06 8.06 0 0 1 11.36 0c1.2 1.2 2.08 2.8 2.36 4.52.36 2.36-.36 4.8-2.2 6.64zM12 2C6.48 2 2 6.48 2 12c0 2.08.8 4.08 2.24 5.6l-1.44 4.32 4.32-1.44A9.98 9.98 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
                 Falar no WhatsApp
               </button>
             </div>
           </div>
-          {/* Bottom accent line */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange rounded-b-2xl"></div>
         </div>
       ))}
     </div>

@@ -95,13 +95,9 @@ const ContentShowcase = () => {
               </div>
             </div>
             <div className="flex flex-col items-center justify-center relative py-12 min-h-[380px] md:min-h-[420px] w-full max-w-xl mx-auto">
-              {/* Glow animado e gradiente de fundo */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                <div className="w-80 h-80 md:w-[480px] md:h-[480px] rounded-full bg-gradient-to-br from-brand-blue via-brand-purple to-brand-orange blur-[120px] opacity-80 animate-pulse-slow"></div>
-              </div>
-              {/* Logo central com glow e destaque */}
-              <div className="relative z-10 flex flex-col items-center justify-center mb-8 animate-glow">
-                <img src="/lovable-uploads/multserver-logo.png" alt="MULT SERVER Logo" className="w-32 h-32 md:w-44 md:h-44 object-contain drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 64px #00CFFF)' }} />
+              {/* Logo central sem efeitos */}
+              <div className="relative z-10 flex flex-col items-center justify-center mb-8">
+                <img src="/lovable-uploads/multserver-logo.png" alt="MULT SERVER Logo" className="w-32 h-32 md:w-44 md:h-44 object-contain" />
               </div>
               {/* Headline impactante */}
               <div className="relative z-10 mb-2">
