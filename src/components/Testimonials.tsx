@@ -83,27 +83,27 @@ const Testimonials = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className="relative w-full max-w-xl">
+          <div className="relative w-full max-w-xl min-h-[320px] md:min-h-[260px]">
             {testimonials.map((testimonial, index) => (
-              <div
+              <div 
                 key={index}
                 className={`absolute left-0 top-0 w-full transition-all duration-700 ease-in-out ${index === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-95 z-0'}`}
                 style={{ pointerEvents: index === current ? 'auto' : 'none' }}
               >
-                <div className="p-8 rounded-2xl bg-card border border-border shadow-lg flex flex-col items-center animate-fade-in">
+                <div className="p-8 rounded-2xl bg-white/90 border border-orange-100 shadow-2xl flex flex-col items-center animate-fade-in">
                   <div className="flex items-center space-x-1 mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-foreground mb-6 leading-relaxed text-center">"{testimonial.text}"</p>
+                  <p className="text-gray-800 mb-6 leading-relaxed text-center font-medium">"{testimonial.text}"</p>
                   <div className="flex items-center space-x-3">
                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-brand-purple to-brand-blue">
                       <User className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-500">{testimonial.location}</div>
                     </div>
                   </div>
                 </div>

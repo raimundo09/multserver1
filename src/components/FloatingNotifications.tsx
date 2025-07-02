@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { Zap, User, MapPin, Clock } from 'lucide-react';
+import { Zap, User, MapPin, Clock, CheckCircle } from 'lucide-react';
 
 interface Notification {
   id: number;
@@ -51,6 +50,17 @@ const FloatingNotifications = () => {
     return fullName;
   };
 
+  // Função para gerar cor de gradiente baseada no nome
+  const getAvatarGradient = (name: string) => {
+    const colors = [
+      'from-brand-blue via-brand-purple to-brand-orange',
+      'from-brand-purple via-brand-blue to-brand-orange',
+      'from-brand-orange via-brand-blue to-brand-purple',
+      'from-brand-blue via-brand-orange to-brand-purple',
+    ];
+    return colors[name.charCodeAt(0) % colors.length];
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       const selectedPlan = plans[Math.floor(Math.random() * plans.length)];
@@ -82,67 +92,63 @@ const FloatingNotifications = () => {
       {notifications.map((notification) => (
         <div
           key={notification.id}
-          className="relative bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl border border-orange-200/30 rounded-xl shadow-xl p-3 max-w-[280px] animate-slide-in-left overflow-hidden group hover:scale-105 transition-all duration-300"
+          className="relative bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl border border-brand-blue/30 rounded-2xl shadow-2xl p-4 max-w-[320px] animate-fade-in overflow-hidden group hover:scale-105 transition-all duration-300"
         >
           {/* Background gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-50/20 to-transparent rounded-xl"></div>
-          
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-brand-purple/5 rounded-2xl"></div>
+          {/* Selo animado */}
+          <div className="absolute top-2 right-2 flex items-center gap-1">
+            <CheckCircle className="w-5 h-5 text-brand-green animate-pulse-slow" />
+            <span className="text-xs font-bold text-brand-green animate-pulse-slow">Novo Cliente</span>
+          </div>
           <div className="relative z-10 flex items-start gap-3">
-            <div className="flex-shrink-0 mt-0.5">
-              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
-                <Zap className="w-4 h-4 text-white" />
-              </div>
+            {/* Avatar com iniciais e gradiente */}
+            <div className={`flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-gradient-to-br ${getAvatarGradient(notification.name)} flex items-center justify-center shadow-lg`}>
+              <span className="text-white font-bold text-lg select-none">
+                {notification.name.split(' ').map(n => n[0]).join('')}
+              </span>
             </div>
-            
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-5 h-5 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center">
-                  <User className="w-3 h-3 text-orange-600" />
-                </div>
-                <p className="text-xs font-bold text-gray-800 truncate">
+                <p className="text-sm font-bold text-gray-900 truncate">
                   {notification.name}
                 </p>
               </div>
-              
               <div className="mb-2">
-                <p className="text-xs text-gray-600 font-medium mb-1">
-                  ✨ Acabou de assinar
+                <p className="text-xs text-gray-600 font-medium mb-1 flex items-center gap-1">
+                  <Zap className="w-3 h-3 text-brand-blue" /> Acabou de assinar
                 </p>
-                
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-2 py-1 rounded-md text-xs font-bold shadow-md">
+                <div className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange text-white px-3 py-1 rounded-full text-xs font-bold shadow-md animate-pulse-slow">
                   {notification.plan}
                 </div>
               </div>
-              
               <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
                 <div className="flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-orange-500" />
+                  <MapPin className="w-3 h-3 text-brand-blue" />
                   <span className="font-medium text-xs">{notification.city}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-orange-500" />
+                  <Clock className="w-3 h-3 text-brand-blue" />
                   <span className="font-medium text-xs">{notification.timeAgo}</span>
                 </div>
               </div>
-              
-              <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-2 border border-green-200/50">
+              <div className="bg-gradient-to-r from-brand-green/10 to-brand-blue/10 rounded-lg p-2 border border-brand-green/30">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-green-700 font-medium">Valor:</span>
-                  <span className="text-sm font-bold text-green-600">{notification.planValue}</span>
+                  <span className="text-xs text-brand-green font-medium">Valor:</span>
+                  <span className="text-lg font-bold text-brand-green animate-pulse">{notification.planValue}</span>
                 </div>
               </div>
+              {/* Botão de ação */}
+              <button
+                onClick={() => window.open('https://wa.me/5511972121789?text=Quero%20assinar%20o%20MULT%20SERVER!', '_blank')}
+                className="mt-3 w-full bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange text-white text-xs font-bold py-2 rounded-lg shadow-md hover:scale-105 transition-all duration-300 animate-glow"
+              >
+                Falar no WhatsApp
+              </button>
             </div>
           </div>
-          
-          {/* Success indicator */}
-          <div className="absolute top-2 left-2">
-            <div className="w-2 h-2 bg-gradient-to-br from-green-400 to-green-500 rounded-full shadow-lg animate-pulse">
-              <div className="w-full h-full bg-white/30 rounded-full animate-ping"></div>
-            </div>
-          </div>
-          
           {/* Bottom accent line */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 rounded-b-xl"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange rounded-b-2xl"></div>
         </div>
       ))}
     </div>

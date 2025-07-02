@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PerformanceTracker from "./components/PerformanceTracker";
 import SmoothScroll from "./components/SmoothScroll";
+import WhatsAppButton from './components/WhatsAppButton';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,6 +32,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <WhatsAppButton />
     </TooltipProvider>
   </QueryClientProvider>
 );

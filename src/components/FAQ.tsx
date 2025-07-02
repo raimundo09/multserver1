@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -68,30 +67,29 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-6">
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="group bg-card/50 border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
+              className="group bg-white/80 shadow-xl border border-orange-100 rounded-2xl overflow-hidden hover:border-brand-orange/60 transition-all duration-300"
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full p-6 text-left flex items-center justify-between hover:bg-card/70 transition-colors duration-300"
+                className="w-full p-6 text-left flex items-center justify-between hover:bg-orange-50 transition-colors duration-300"
               >
-                <h3 className="text-lg font-black text-foreground font-montserrat pr-4">
+                <h3 className="text-lg font-black text-gray-900 font-montserrat pr-4">
                   {faq.question}
                 </h3>
                 {openItems.includes(index) ? (
-                  <ChevronUp className="w-6 h-6 text-primary flex-shrink-0" />
+                  <ChevronUp className="w-6 h-6 text-brand-orange flex-shrink-0" />
                 ) : (
-                  <ChevronDown className="w-6 h-6 text-primary flex-shrink-0" />
+                  <ChevronDown className="w-6 h-6 text-brand-orange flex-shrink-0" />
                 )}
               </button>
-              
               {openItems.includes(index) && (
                 <div className="px-6 pb-6">
-                  <div className="pt-2 border-t border-border/50">
-                    <p className="text-muted-foreground leading-relaxed">
+                  <div className="pt-2 border-t border-orange-100">
+                    <p className="text-gray-700 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

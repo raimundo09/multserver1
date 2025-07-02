@@ -62,7 +62,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg" 
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white text-lg px-8 py-6 rounded-xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow" 
+                className="bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange hover:from-brand-purple hover:to-brand-blue text-white text-lg px-8 py-6 rounded-xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow" 
                 onClick={() => window.open('https://wa.me/5511972121789?text=Quero%20assinar', '_blank')}
               >
                 🚀 QUERO ASSINAR
@@ -70,7 +70,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-black text-lg px-8 py-6 rounded-xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300" 
+                className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white text-lg px-8 py-6 rounded-xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-300" 
                 onClick={() => window.open('https://wa.me/5511972121789?text=Quero%20fazer%20um%20TESTE!', '_blank')}
               >
                 ✨ TESTE GRÁTIS
@@ -81,21 +81,12 @@ const Hero = () => {
           {/* Right Column - Card de destaque */}
           <div className="lg:col-span-5 hidden lg:flex items-center justify-center">
             <div className="relative w-full max-w-md">
-              <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl animate-float">
-                <div className="text-center space-y-6">
-                  <div className="w-20 h-20 bg-gradient-to-r from-brand-orange to-red-600 rounded-2xl mx-auto flex items-center justify-center shadow-xl">
-                    <Play className="w-10 h-10 text-white" />
+              <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl animate-float flex items-center justify-center">
+                <div className="relative">
+                  <div className="w-32 h-32 rounded-full mx-auto flex items-center justify-center shadow-xl bg-white/30 animate-pulse">
+                    <img src="/lovable-uploads/multserver-logo.png" alt="MULT SERVER Logo" style={{ width: '96px', height: '96px', objectFit: 'contain', filter: 'drop-shadow(0 0 16px white)' }} />
                   </div>
-                  
-                  <div className="text-white space-y-4">
-                    <h3 className="text-2xl font-bold">Comece Agora</h3>
-                    <p className="text-white/80">Teste grátis por 24 horas</p>
-                    
-                    <div className="flex items-center justify-center gap-1 text-yellow-400">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
-                    </div>
-                    <p className="text-sm text-white/70">4.9/5 baseado em 10.000+ avaliações</p>
-                  </div>
+                  <div className="absolute inset-0 rounded-full bg-white/20 animate-ping"></div>
                 </div>
               </div>
             </div>

@@ -34,7 +34,7 @@ const Header = () => {
       className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
-        isScrolled ? 'bg-background/95 backdrop-blur-xl border-b border-border/20 shadow-lg' : ''
+        isScrolled ? 'bg-brand-dark/80 backdrop-blur-xl border-b border-brand-blue/30 shadow-2xl' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -60,7 +60,7 @@ const Header = () => {
               <a 
                 key={item.href}
                 href={item.href} 
-                className="relative px-4 py-2 text-foreground hover:text-orange-500 transition-colors font-medium group"
+                className="relative px-4 py-2 text-white hover:text-brand-blue transition-colors font-semibold group"
               >
                 <span className="relative z-10">{item.label}</span>
                 <div className="absolute inset-0 bg-orange-500/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
@@ -73,13 +73,13 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-3">
             <Button 
               variant="outline" 
-              className="relative border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 overflow-hidden group"
+              className="relative border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-blue/25 overflow-hidden group"
               onClick={() => window.open('https://wa.me/5511972121789?text=Quero%20fazer%20um%20TESTE!', '_blank')}
             >
               <span className="relative z-10">Teste Grátis</span>
-              <div className="absolute inset-0 bg-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="absolute inset-0 bg-brand-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Button>
-            <Button className="relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 overflow-hidden">
+            <Button className="relative bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange hover:from-brand-purple hover:to-brand-blue text-white font-bold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-blue/25 overflow-hidden">
               <span className="relative z-10">Assinar Agora</span>
               <div className="absolute inset-0 bg-white/10 scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-center"></div>
             </Button>
