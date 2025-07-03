@@ -88,11 +88,11 @@ const FloatingNotifications = () => {
   }, [currentId]);
 
   return (
-    <div className="fixed bottom-6 left-6 z-30 space-y-3 max-w-xs">
+    <div className="fixed bottom-3 left-2 z-30 space-y-2 max-w-xs w-[92vw] sm:bottom-6 sm:left-6 sm:space-y-3 sm:max-w-xs">
       {notifications.map((notification) => (
         <div
           key={notification.id}
-          className="relative bg-white border border-gray-200 rounded-2xl shadow-lg p-4 max-w-[320px] animate-fade-in overflow-hidden group hover:scale-105 transition-all duration-300"
+          className="relative bg-white border border-gray-200 rounded-2xl shadow-lg p-2 max-w-[320px] animate-fade-in overflow-hidden group hover:scale-105 transition-all duration-300 sm:p-4"
         >
           {/* Selo animado */}
           <div className="absolute top-2 right-2 flex items-center gap-1">
@@ -101,26 +101,26 @@ const FloatingNotifications = () => {
           </div>
           <div className="relative z-10 flex items-start gap-3">
             {/* Avatar com iniciais e gradiente */}
-            <div className="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center shadow">
-              <span className="text-blue-700 font-bold text-lg select-none">
+            <div className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shadow sm:w-10 sm:h-10">
+              <span className="text-blue-700 font-bold text-base select-none sm:text-lg">
                 {notification.name.split(' ').map(n => n[0]).join('')}
               </span>
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2">
-                <p className="text-sm font-bold text-gray-900 truncate">
+                <p className="text-xs font-bold text-gray-900 truncate sm:text-sm">
                   {notification.name}
                 </p>
               </div>
               <div className="mb-2">
-                <p className="text-xs text-gray-600 font-medium mb-1 flex items-center gap-1">
+                <p className="text-[11px] text-gray-600 font-medium mb-1 flex items-center gap-1 sm:text-xs">
                   <Zap className="w-3 h-3 text-blue-500" /> Acabou de assinar
                 </p>
-                <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                <div className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-[11px] font-bold shadow-sm sm:px-3 sm:py-1 sm:text-xs">
                   {notification.plan}
                 </div>
               </div>
-              <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
+              <div className="flex items-center justify-between text-[11px] text-gray-500 mb-1 sm:text-xs sm:mb-2">
                 <div className="flex items-center gap-1">
                   <MapPin className="w-3 h-3 text-blue-400" />
                   <span className="font-medium text-xs">{notification.city}</span>
@@ -130,16 +130,16 @@ const FloatingNotifications = () => {
                   <span className="font-medium text-xs">{notification.timeAgo}</span>
                 </div>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2 border border-green-100">
+              <div className="bg-gray-50 rounded-lg p-1 border border-green-100 sm:p-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-gray-600 font-medium">Valor:</span>
-                  <span className="text-lg font-bold text-green-500">{notification.planValue}</span>
+                  <span className="text-[11px] text-gray-600 font-medium sm:text-xs">Valor:</span>
+                  <span className="text-base font-bold text-green-500 sm:text-lg">{notification.planValue}</span>
                 </div>
               </div>
               {/* Botão de ação */}
               <button
                 onClick={() => window.open('https://wa.me/5511972121789?text=Quero%20assinar%20o%20MULT%20SERVER!', '_blank')}
-                className="mt-3 w-full bg-green-500 text-white text-xs font-bold py-2 rounded-lg shadow hover:bg-green-600 transition-all duration-200 flex items-center justify-center gap-2"
+                className="mt-2 w-full bg-green-500 text-white text-[11px] font-bold py-1.5 rounded-lg shadow hover:bg-green-600 transition-all duration-200 flex items-center justify-center gap-2 sm:mt-3 sm:text-xs sm:py-2"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 17.52c-1.2 1.2-2.8 2.08-4.52 2.36-2.36.36-4.8-.36-6.64-2.2-1.84-1.84-2.56-4.28-2.2-6.64.28-1.72 1.16-3.32 2.36-4.52a8.06 8.06 0 0 1 11.36 0c1.2 1.2 2.08 2.8 2.36 4.52.36 2.36-.36 4.8-2.2 6.64zM12 2C6.48 2 2 6.48 2 12c0 2.08.8 4.08 2.24 5.6l-1.44 4.32 4.32-1.44A9.98 9.98 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
                 Falar no WhatsApp
