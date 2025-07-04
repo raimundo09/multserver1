@@ -88,11 +88,11 @@ const FloatingNotifications = () => {
   }, [currentId]);
 
   return (
-    <div className="fixed bottom-2 left-1 z-30 space-y-1 max-w-[90vw] w-[90vw] sm:bottom-6 sm:left-6 sm:space-y-3 sm:max-w-xs sm:w-auto">
+    <div className="fixed bottom-2 left-2 z-30 space-y-1 max-w-[280px] w-[280px] sm:bottom-6 sm:left-8 sm:space-y-3 sm:max-w-[280px] sm:w-[280px]">
       {notifications.map((notification) => (
         <div
           key={notification.id}
-          className="relative bg-white border border-gray-200 rounded-2xl shadow-lg p-1.5 max-w-[90vw] animate-fade-in overflow-hidden group hover:scale-105 transition-all duration-300 sm:p-4 sm:max-w-[320px]"
+          className="relative bg-white border border-gray-200 rounded-2xl shadow-lg p-1.5 max-w-[280px] animate-fade-in overflow-hidden group hover:scale-105 transition-all duration-300 sm:p-4 sm:max-w-[280px]"
         >
           {/* Selo animado */}
           <div className="absolute top-2 right-2 flex items-center gap-1">
