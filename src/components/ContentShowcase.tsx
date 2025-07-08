@@ -82,13 +82,15 @@ const ContentShowcase = () => {
             <div>
               <h3 className="text-3xl md:text-4xl font-black mb-4 text-white drop-shadow-lg">Qualidade Excepcional</h3>
               <p className="text-lg md:text-xl text-white/90 mb-8 font-medium">Transmissão em 4K sem travamentos, sem anúncios e com suporte 24/7</p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {qualityFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3 bg-white/10 rounded-xl p-3 shadow-md hover:scale-105 transition-transform border border-white/20">
-                    <div className="w-7 h-7 bg-green-500/90 rounded-full flex items-center justify-center shadow">
+                  <div key={index} className="flex flex-col items-center justify-center gap-2 bg-white/10 rounded-xl p-4 min-h-[80px] min-w-0 w-full shadow-md hover:scale-105 transition-transform border border-white/20 text-center break-words">
+                    <div className="w-7 h-7 bg-green-500/90 rounded-full flex items-center justify-center shadow mb-1">
                       <Star className="w-4 h-4 text-white fill-current" />
                     </div>
-                    <span className="font-semibold text-white text-base md:text-lg drop-shadow">{feature.label}</span>
+                    <span className="font-semibold text-white text-sm md:text-base drop-shadow break-words leading-tight">
+                      {feature.label}
+                    </span>
                   </div>
                 ))}
               </div>
