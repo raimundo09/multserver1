@@ -7,7 +7,7 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img src="/lovable-uploads/multserver-logo.png" alt="MULT SERVER Logo" style={{ height: '72px', width: 'auto', objectFit: 'contain', background: 'transparent', filter: 'drop-shadow(0 0 16px #00CFFF)' }} />
+              <img src="/lovable-uploads/multserver-logo.png" alt="MULT SERVER Logo" style={{ height: '100px', width: 'auto', objectFit: 'contain', background: 'transparent', filter: 'drop-shadow(0 0 16px #00CFFF)' }} />
             </div>
             <p className="text-gray-300 leading-relaxed">
               A melhor plataforma de IPTV do Brasil. Entretenimento sem limites com qualidade excepcional.
