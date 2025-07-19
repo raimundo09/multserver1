@@ -115,11 +115,6 @@ const Testimonials = () => {
       text: "Testei o período gratuito e me apaixonei! Já estou no segundo mês e só tenho elogios."
     },
     {
-      name: "André Costa",
-      location: "Porto Velho, RO",
-      text: "Como gamer, preciso de qualidade. Este serviço não me decepciona nunca!"
-    },
-    {
       name: "Isabela Martins",
       location: "Cuiabá, MT",
       text: "Melhor custo-benefício que encontrei. Muito mais conteúdo pelo mesmo preço!"
