@@ -119,8 +119,8 @@ const ContentShowcase = () => {
                 <svg className="w-7 h-7 md:w-9 md:h-9 text-brand-orange animate-bounce mb-1" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m0 0l-6-6m6 6l6-6" /></svg>
               </div>
               {/* Botão moderno com gradiente animado */}
-              <Button
-                size="lg"
+              <Button 
+                size="lg" 
                 className="relative mt-2 bg-gradient-to-r from-brand-blue via-brand-purple to-brand-orange hover:from-brand-purple hover:to-brand-blue text-white text-lg md:text-xl px-8 md:px-14 py-3 md:py-5 rounded-2xl font-extrabold shadow-xl transform hover:scale-105 active:scale-95 transition-all duration-300 animate-glow flex items-center gap-3 focus:ring-4 focus:ring-brand-orange/40 focus:outline-none group border-0"
                 style={{ boxShadow: '0 8px 32px 0 rgba(0,207,255,0.18)' }}
                 onClick={() => window.open('https://wa.me/5511972121789?text=Quero%20fazer%20um%20TESTE!', '_blank')}
