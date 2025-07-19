@@ -7,7 +7,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "POSSO TESTAR ANTES DE ASSINAR?",
-      answer: "Sim! Disponibilizamos um teste grátis de 12 horas, justamente para você poder conhecer todos os nossos canais, filmes e séries e também para você ver como irá rodar na sua internet. Veja nossos tutoriais antes de solicitar seu teste."
+      answer: "Sim! Disponibilizamos um teste grátis de 4 horas, justamente para você poder conhecer todos os nossos canais, filmes e séries e também para você ver como irá rodar na sua internet. Veja nossos tutoriais antes de solicitar seu teste."
     },
     {
       question: "COMO FUNCIONA O PAGAMENTO?",
@@ -28,41 +28,25 @@ const FAQ = () => {
     {
       question: "A QUALIDADE É REALMENTE 4K?",
       answer: "Sim! Oferecemos conteúdo em Full HD e 4K quando disponível. A qualidade varia conforme sua internet - recomendamos pelo menos 10MB para 4K e 5MB para Full HD."
-    },
-    {
-      question: "POSSO USAR FORA DO BRASIL?",
-      answer: "Sim, você pode usar nosso serviço em qualquer lugar do mundo, desde que tenha uma conexão estável com a internet. Ideal para brasileiros no exterior!"
-    },
-    {
-      question: "COMO É O SUPORTE TÉCNICO?",
-      answer: "Oferecemos suporte 24/7 via WhatsApp. Nossa equipe técnica especializada está sempre pronta para ajudar com instalação, configuração e resolução de problemas."
-    },
-    {
-      question: "HÁ LIMITE DE DADOS OU BANDA?",
-      answer: "Não há limite de dados da nossa parte. O consumo depende da sua operadora de internet. Recomendamos internet banda larga para melhor experiência."
-    },
-    {
-      question: "COMO FAÇO A INSTALAÇÃO?",
-      answer: "É muito simples! Após a compra, enviamos um tutorial completo via WhatsApp com passo a passo para seu dispositivo. Também oferecemos suporte durante a instalação."
     }
   ];
 
   const toggleItem = (index: number) => {
     setOpenItems(prev => 
       prev.includes(index) 
-        ? prev.filter(item => item !== index)
+        ? prev.filter(i => i !== index)
         : [...prev, index]
     );
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-br from-gray-900 via-brand-dark to-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground font-montserrat">
-            DÚVIDAS <span className="text-primary">FREQUENTES</span>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white font-montserrat">
+            DÚVIDAS <span className="text-brand-orange">FREQUENTES</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Esclarecemos as principais dúvidas sobre nossos serviços
           </p>
         </div>
@@ -71,13 +55,13 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="group bg-white/80 shadow-xl border border-orange-100 rounded-2xl overflow-hidden hover:border-brand-orange/60 transition-all duration-300"
+              className="group bg-white/10 backdrop-blur-sm shadow-xl border border-white/20 rounded-2xl overflow-hidden hover:border-brand-orange/60 transition-all duration-300"
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full p-6 text-left flex items-center justify-between hover:bg-orange-50 transition-colors duration-300"
+                className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
               >
-                <h3 className="text-lg font-black text-gray-900 font-montserrat pr-4">
+                <h3 className="text-lg font-black text-white font-montserrat pr-4">
                   {faq.question}
                 </h3>
                 {openItems.includes(index) ? (
@@ -88,8 +72,8 @@ const FAQ = () => {
               </button>
               {openItems.includes(index) && (
                 <div className="px-6 pb-6">
-                  <div className="pt-2 border-t border-orange-100">
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="pt-2 border-t border-white/20">
+                    <p className="text-gray-200 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -100,7 +84,7 @@ const FAQ = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
+          <p className="text-gray-300 mb-4">
             Ainda tem dúvidas? Fale conosco!
           </p>
           <button

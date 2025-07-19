@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const Footer = () => {
-  return <footer className="bg-brand-dark text-white">
+  return <footer id="contato" className="bg-brand-dark text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo e Descrição */}
@@ -43,11 +43,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-brand-blue">Suporte</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">Central de Ajuda</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">Tutoriais</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">FAQ</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">Política de Privacidade</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">Termos de Uso</a></li>
+              <li><a href="/help-center" className="text-gray-300 hover:text-brand-blue transition-colors">Central de Ajuda</a></li>
+              <li><a href="/faq" className="text-gray-300 hover:text-brand-blue transition-colors">FAQ</a></li>
+              <li><a href="/privacy-policy" className="text-gray-300 hover:text-brand-blue transition-colors">Política de Privacidade</a></li>
+              <li><a href="/terms-of-service" className="text-gray-300 hover:text-brand-blue transition-colors">Termos de Uso</a></li>
             </ul>
           </div>
 

@@ -59,6 +59,71 @@ const Testimonials = () => {
       location: "Goiânia, GO",
       text: "Preço justo e muita variedade. Não troco por nada!"
     },
+    {
+      name: "Patrícia Lima",
+      location: "Vitória, ES",
+      text: "Finalmente encontrei um serviço que funciona perfeitamente! Meus filhos adoram os canais infantis."
+    },
+    {
+      name: "Roberto Santos",
+      location: "Campo Grande, MS",
+      text: "Como técnico de informática, sou muito exigente com qualidade. Este serviço superou todas as expectativas!"
+    },
+    {
+      name: "Carla Mendes",
+      location: "Maceió, AL",
+      text: "Economia mensal de mais de R$ 200! Agora posso assistir tudo que quero sem me preocupar com o bolso."
+    },
+    {
+      name: "Diego Costa",
+      location: "João Pessoa, PB",
+      text: "Uso no celular, tablet e TV. Funciona perfeitamente em todos. Melhor investimento que fiz!"
+    },
+    {
+      name: "Amanda Silva",
+      location: "Teresina, PI",
+      text: "Sou professora e uso muito para documentários educativos. A variedade de conteúdo é impressionante."
+    },
+    {
+      name: "Marcelo Oliveira",
+      location: "Natal, RN",
+      text: "Fã de esportes aqui! Todos os jogos que quero assistir estão disponíveis em alta qualidade."
+    },
+    {
+      name: "Vanessa Rodrigues",
+      location: "Aracaju, SE",
+      text: "Minha família toda usa. Desde meus pais até meus filhos adolescentes. Todos adoram!"
+    },
+    {
+      name: "Thiago Pereira",
+      location: "Palmas, TO",
+      text: "Internet não é das melhores aqui, mas mesmo assim o streaming funciona muito bem. Parabéns!"
+    },
+    {
+      name: "Larissa Santos",
+      location: "Boa Vista, RR",
+      text: "Moro no Norte e sempre tive problemas com outros serviços. Este funciona perfeitamente!"
+    },
+    {
+      name: "Ricardo Almeida",
+      location: "Macapá, AP",
+      text: "Qualidade profissional mesmo com internet instável. Serviço realmente diferenciado!"
+    },
+    {
+      name: "Camila Ferreira",
+      location: "Rio Branco, AC",
+      text: "Testei o período gratuito e me apaixonei! Já estou no segundo mês e só tenho elogios."
+    },
+    {
+      name: "André Costa",
+      location: "Porto Velho, RO",
+      text: "Como gamer, preciso de qualidade. Este serviço não me decepciona nunca!"
+    },
+    {
+      name: "Isabela Martins",
+      location: "Cuiabá, MT",
+      text: "Melhor custo-benefício que encontrei. Muito mais conteúdo pelo mesmo preço!"
+    }
   ];
 
   // Carrossel animado

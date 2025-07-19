@@ -13,9 +13,16 @@ const SmoothScroll = () => {
         const element = document.querySelector(href);
         
         if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          // Get header height for offset
+          const header = document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // 20px extra padding
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
           });
         }
       }
