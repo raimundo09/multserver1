@@ -28,10 +28,10 @@ const FloatingNotifications = () => {
   ];
 
   const plans = [
-    { name: 'Plano Econômico', value: 'R$ 30,00' },
-    { name: 'Plano Super Econômico', value: 'R$ 75,00' }, 
-    { name: 'Plano Mega Econômico', value: 'R$ 110,00' },
-    { name: 'Plano Ultra Econômico', value: 'R$ 184,90' }
+    { name: 'Plano Mensal', value: 'R$ 20,00' },
+    { name: 'Plano Trimestral', value: 'R$ 51,00' }, 
+    { name: 'Plano Semestral', value: 'R$ 90,00' },
+    { name: 'Plano Anual', value: 'R$ 144,00' }
   ];
 
   const cities = [

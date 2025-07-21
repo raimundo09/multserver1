@@ -18,10 +18,10 @@ const SavingsCalculator = () => {
   ];
 
   const ourPlans = [
-    { name: 'Econômico', price: 30, period: '1 mês' },
-    { name: 'Super Econômico', price: 25, period: '3 meses' },
-    { name: 'Mega Econômico', price: 18.33, period: '6 meses' },
-    { name: 'Ultra Econômico', price: 15.41, period: '1 ano' }
+    { name: 'Mensal', price: 20, period: '1 mês' },
+    { name: 'Trimestral', price: 17, period: '3 meses' },
+    { name: 'Semestral', price: 15, period: '6 meses' },
+    { name: 'Anual', price: 12, period: '1 ano' }
   ];
 
   const toggleService = (serviceName: string) => {

@@ -6,8 +6,8 @@ import GuaranteeSection from './GuaranteeSection';
 
 const Pricing = () => {
   const plans = [{
-    name: "Econômico",
-    price: "30",
+    name: "Mensal",
+    price: "20",
     period: "mês",
     duration: "1 mês",
     description: "Pacote completo 1 mês de acesso",
@@ -16,8 +16,8 @@ const Pricing = () => {
     badge: null,
     urgency: false
   }, {
-    name: "Super Econômico",
-    price: "75",
+    name: "Trimestral",
+    price: "51",
     period: "3 meses",
     duration: "3 meses",
     description: "Pacote completo 3 meses de acesso",
@@ -26,8 +26,8 @@ const Pricing = () => {
     badge: null,
     urgency: false
   }, {
-    name: "Mega Econômico",
-    price: "110",
+    name: "Semestral",
+    price: "90",
     period: "6 meses",
     duration: "6 meses",
     description: "Pacote completo 6 meses de acesso",
@@ -36,8 +36,8 @@ const Pricing = () => {
     badge: "Mais Popular",
     urgency: true
   }, {
-    name: "Ultra Econômico",
-    price: "184,90",
+    name: "Anual",
+    price: "144",
     period: "1 ano",
     duration: "1 ano",
     description: "Pacote completo 1 ano de acesso",
